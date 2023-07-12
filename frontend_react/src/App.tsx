@@ -1,5 +1,5 @@
-import DepartmentSection from './components/DepartmentSection';
-import EmployeeSection from './components/EmployeeSection';
+import DepartmentSection from './components/department/DepartmentSection';
+import EmployeeSection from './components/employee/EmployeeSection';
 
 const App = () => {
   return (
