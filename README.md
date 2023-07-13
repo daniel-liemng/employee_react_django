@@ -21,11 +21,11 @@ Back End: Django, Django Rest Framework
 A web application built with React (UI) and Django Rest Framework (API).
 
 - Department: User can list, create, update, and delete.
-- Department: User can search, list, create, update, and delete.
+- Employee: User can search, list, create, update, and delete.
 
 ## Tech Stack
 
-- ##### React.js, React Query, React Hook Form, TailwindCss
+- ##### React.js, React Query, React Hook Form, TailwindCss, Typescript
 - ##### Django - Django Rest Framework
 
 ## Work Flow
