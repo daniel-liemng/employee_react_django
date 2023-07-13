@@ -1,4 +1,4 @@
-export interface Employee {
+export type Employee = {
   id: number;
   name: string;
   email: string;
@@ -6,4 +6,9 @@ export interface Employee {
   status: boolean;
   createdAt: string;
   updatedAt: string;
-}
+  department: number;
+  depName?: string;
+  // department: {
+  //   name: string;
+  // };
+};
