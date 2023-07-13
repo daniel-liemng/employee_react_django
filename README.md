@@ -4,7 +4,7 @@ A web application with React and Django - Django Rest Framework
 
 Front End: React-Vite, React Query, React Hook Form, TailwindCss
 
-Back End: Django, Django Rest Framwork
+Back End: Django, Django Rest Framework
 
 ## Table of Contents
 
@@ -20,8 +20,8 @@ Back End: Django, Django Rest Framwork
 
 A web application built with React (UI) and Django Rest Framework (API).
 
-- Department: User can list, create, update and delete.
-- Department: User can search, list, create, update and delete.
+- Department: User can list, create, update, and delete.
+- Department: User can search, list, create, update, and delete.
 
 ## Tech Stack
 
@@ -30,13 +30,25 @@ A web application built with React (UI) and Django Rest Framework (API).
 
 ## Work Flow
 
+https://github.com/daniel-liemng/employyee_react_django/blob/master/screenshots/employee_video.webm
+
+- Homepage
+
+![Image](https://github.com/daniel-liemng/employyee_react_django/blob/master/screenshots/Home.PNG)
+
 - User can list, create, update and delete department.
 
-![Image](https://github.com/daniel-liemng/schoolboard_mern/blob/master/screenshots/Home.PNG)
+![Image](https://github.com/daniel-liemng/employyee_react_django/blob/master/screenshots/EditDepartment.PNG)
 
-- - User can list, search, create, update and delete employee.
+![Image](https://github.com/daniel-liemng/employyee_react_django/blob/master/screenshots/DeleteDepartment.PNG)
 
-![Image](https://github.com/daniel-liemng/schoolboard_mern/blob/master/screenshots/Profile.PNG)
+- User can list, search, create, update and delete employee.
+
+![Image](https://github.com/daniel-liemng/employyee_react_django/blob/master/screenshots/AddEmployeeError.PNG)
+
+![Image](https://github.com/daniel-liemng/employyee_react_django/blob/master/screenshots/EditEmployee.PNG)
+
+![Image](https://github.com/daniel-liemng/employyee_react_django/blob/master/screenshots/DeleteEmployee.PNG)
 
 ## Getting started
 
