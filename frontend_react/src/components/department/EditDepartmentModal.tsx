@@ -23,7 +23,7 @@ const EditDepartmentModal: React.FC<EditDepartmentModalProps> = ({
 
   const handleEditDepartment = async () => {
     await editDepartment({ id: department.id, name });
-    setName('');
+
     toast.success('Department Edited');
     handleClose();
   };

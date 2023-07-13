@@ -1,7 +1,5 @@
-import { useState, ChangeEvent } from 'react';
 import { toast } from 'react-hot-toast';
 
-import Input from '../shared/Input';
 import Modal from '../shared/Modal';
 import { useDeleteDepartmentMutation } from '../../hooks/departmentHooks';
 import { Department } from '../../types/department';
