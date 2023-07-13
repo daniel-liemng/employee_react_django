@@ -22,7 +22,6 @@ const DepartmentSection = () => {
       <h2 className='text-3xl text-center mt-5 mb-8'>Department</h2>
       <div className='mb-4 flex gap-2'>
         <Input
-          name='name'
           value={name}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             setName(e.target.value)
@@ -31,6 +30,7 @@ const DepartmentSection = () => {
         />
 
         <div
+          // eslint-disable-next-line @typescript-eslint/no-misused-promises
           onClick={handleCreateDepartment}
           className='bg-teal-300 rounded-full w-12 h-10 flex justify-center items-center cursor-pointer'
         >

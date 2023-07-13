@@ -3,28 +3,27 @@ import { toast } from 'react-hot-toast';
 
 import Input from '../shared/Input';
 import Modal from '../shared/Modal';
-import { useEditDepartmentMutation } from '../../hooks/departmentHooks';
+import { useDeleteDepartmentMutation } from '../../hooks/departmentHooks';
 import { Department } from '../../types/department';
 
-interface EditDepartmentModalProps {
+interface DeleteDepartmentModalProps {
   department: Department;
   isOpen: boolean;
   handleClose: () => void;
 }
 
-const EditDepartmentModal: React.FC<EditDepartmentModalProps> = ({
+const DeleteDepartmentModal: React.FC<DeleteDepartmentModalProps> = ({
   department,
   isOpen,
   handleClose,
 }) => {
-  const { mutateAsync: editDepartment, error } = useEditDepartmentMutation();
+  const { mutateAsync: deleteDepartment, error } =
+    useDeleteDepartmentMutation();
 
-  const [name, setName] = useState(department.name);
+  const handleDeleteDepartment = async () => {
+    await deleteDepartment({ id: department.id });
 
-  const handleEditDepartment = async () => {
-    await editDepartment({ id: department.id, name });
-    setName('');
-    toast.success('Department Edited');
+    toast.success('Department Deleted');
     handleClose();
   };
 
@@ -33,25 +32,26 @@ const EditDepartmentModal: React.FC<EditDepartmentModalProps> = ({
   }
 
   return (
-    <Modal title='Edit Department' isOpen={isOpen} handleClose={handleClose}>
+    <Modal
+      title='Confirm Delete Department'
+      isOpen={isOpen}
+      handleClose={handleClose}
+    >
       <div className='mt-6 w-full'>
-        <Input
-          value={name}
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            setName(e.target.value)
-          }
-          placeholder='Department Name'
-        />
+        <p>
+          Are you sure you want to delete department <u>{department.name}</u>{' '}
+          and its related employee?
+        </p>
       </div>
 
       <div className='bg-[#192734] px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6 mt-3'>
         <button
           type='button'
-          className='inline-flex w-full justify-center rounded-md bg-teal-400 px-3 py-2 text-sm font-semibold text-gray-700 shadow-sm hover:bg-teal-200 sm:ml-3 sm:w-auto'
+          className='inline-flex w-full justify-center rounded-md bg-red-400 px-3 py-2 text-sm font-semibold text-gray-700 shadow-sm hover:bg-red-300 sm:ml-3 sm:w-auto'
           // eslint-disable-next-line @typescript-eslint/no-misused-promises
-          onClick={handleEditDepartment}
+          onClick={handleDeleteDepartment}
         >
-          Edit
+          Yes, delete it
         </button>
         <button
           type='button'
@@ -65,4 +65,4 @@ const EditDepartmentModal: React.FC<EditDepartmentModalProps> = ({
   );
 };
 
-export default EditDepartmentModal;
+export default DeleteDepartmentModal;
