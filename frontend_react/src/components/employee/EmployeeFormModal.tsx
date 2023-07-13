@@ -82,6 +82,8 @@ const EmployeeFormModal: React.FC<EmployeeFormModalProps> = ({
     toast.error('Something went wrong');
   }
 
+  console.log('8888', employee);
+
   return (
     <Modal
       title={`${employee ? 'Edit' : 'Create New'} Employee`}
@@ -163,7 +165,7 @@ const EmployeeFormModal: React.FC<EmployeeFormModalProps> = ({
             className='bg-slate-700 border border-gray-400 text-gray-400 rounded shadow focus:outline-none focus:ring-gray-300 focus:border-gray-500 w-full py-1.5 px-3'
             {...register('department')}
           >
-            <option>Choose a country</option>
+            <option>Choose a department</option>
             {data?.map((department: Department) => (
               <option value={department.id} key={department.id}>
                 {department.name}
