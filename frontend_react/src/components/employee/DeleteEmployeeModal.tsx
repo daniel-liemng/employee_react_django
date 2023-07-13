@@ -2,9 +2,10 @@ import { toast } from 'react-hot-toast';
 
 import Modal from '../shared/Modal';
 import { Employee } from '../../types/employee';
+import { useDeleteEmployeeMutation } from '../../hooks/employeeHooks';
 
 interface DeleteEmployeeModalProps {
-  employee?: Employee;
+  employee: Employee;
   isOpen: boolean;
   handleClose: () => void;
 }
@@ -14,19 +15,18 @@ const DeleteEmployeeModal: React.FC<DeleteEmployeeModalProps> = ({
   isOpen,
   handleClose,
 }) => {
-  // const { mutateAsync: deleteDepartment, error } =
-  //   useDeleteDepartmentMutation();
+  const { mutateAsync: deleteEmployee, error } = useDeleteEmployeeMutation();
 
-  // const handleDeleteDepartment = async () => {
-  //   await deleteDepartment({ id: department.id });
+  const handleDeleteEmployee = async () => {
+    await deleteEmployee({ id: employee.id });
 
-  //   toast.success('Department Deleted');
-  //   handleClose();
-  // };
+    toast.success('Employee Deleted');
+    handleClose();
+  };
 
-  // if (error) {
-  //   toast.error('Something went wrong');
-  // }
+  if (error) {
+    toast.error('Something went wrong');
+  }
 
   return (
     <Modal
@@ -44,7 +44,8 @@ const DeleteEmployeeModal: React.FC<DeleteEmployeeModalProps> = ({
         <button
           type='button'
           className='inline-flex w-full justify-center rounded-md bg-red-400 px-3 py-2 text-sm font-semibold text-gray-700 shadow-sm hover:bg-red-300 sm:ml-3 sm:w-auto'
-          onClick={() => {}}
+          // eslint-disable-next-line @typescript-eslint/no-misused-promises
+          onClick={handleDeleteEmployee}
         >
           Yes, delete it
         </button>
